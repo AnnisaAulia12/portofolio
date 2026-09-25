@@ -1,0 +1,783 @@
+.about-section {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  overflow: hidden;
+
+  background: transparent;
+  background-image: none;
+}
+
+.about-content {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    60%
+    40%;
+
+  align-items: center;
+
+  padding:
+    35px
+    65px
+    60px
+    110px;
+
+  box-sizing: border-box;
+
+  transform:
+    translateY(-70px);
+}
+
+.about-left {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 780px;
+
+  z-index: 10;
+}
+
+
+.about-heading-image {
+  display: block;
+
+  width: 108%;
+
+  max-width: 800px;
+
+  height: auto;
+
+  margin:
+    0
+    0
+    34px;
+
+  object-fit: contain;
+
+  object-position:
+    left center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+
+  opacity: 0;
+
+  transform:
+    translateY(35px)
+    scale(0.88);
+
+  transition:
+    opacity
+    0.7s
+    ease,
+
+    transform
+    0.85s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.about-section.is-inview
+.about-heading-image {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.about-description {
+  width: 100%;
+
+  max-width: 640px;
+}
+
+
+.about-description p {
+  margin:
+    0
+    0
+    20px;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  /*
+    Sedikit diperbesar
+  */
+  font-size: 15px;
+
+  line-height: 1.38;
+
+  font-weight: 600;
+
+  color: #66604d;
+
+
+  opacity: 0;
+
+  transform:
+    translateY(25px)
+    scale(0.97);
+
+  transition:
+    opacity
+    0.6s
+    ease,
+
+    transform
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.about-description
+.about-intro {
+
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+.about-section.is-inview
+.about-description p:nth-child(1) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.16s;
+}
+
+.about-section.is-inview
+.about-description p:nth-child(2) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.30s;
+}
+
+.about-section.is-inview
+.about-description p:nth-child(3) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.44s;
+}
+
+.about-description p:last-child {
+  margin-bottom: 0;
+}
+
+.about-right {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+
+  overflow: visible;
+
+  opacity: 0;
+
+  transform:
+    translateX(35px)
+    translateY(15px)
+    scale(0.93);
+
+  transition:
+    opacity
+    0.75s
+    ease
+    0.20s,
+
+    transform
+    0.85s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    0.20s;
+}
+
+.about-section.is-inview
+.about-right {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    translateY(0)
+    scale(1);
+}
+
+.about-photo-composition {
+  position: relative;
+
+  width: 540px;
+  height: 738px;
+
+  max-width: 100%;
+
+  background-image:
+    url("../assets/images/photo.png");
+
+  background-size:
+    contain;
+
+  background-position:
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  z-index: 20;
+
+  transform:
+    translate(10px, 0);
+
+  animation:
+    aboutPhotoFloat
+    5.5s
+    ease-in-out
+    infinite;
+
+  will-change:
+    transform;
+}
+
+
+.about-sticker {
+  position: absolute;
+
+  background-size:
+    contain;
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    center;
+
+  pointer-events:
+    none;
+
+  user-select:
+    none;
+
+  z-index: 30;
+
+  will-change:
+    transform;
+}
+
+.about-flower-top {
+  width: 84px;
+  height: 88px;
+
+  top: 2.7%;
+  left: 32%;
+
+  background-image:
+    url("../assets/images/bunga1.png");
+
+  transform:
+    rotate(-8deg);
+
+  animation:
+    aboutFlowerTop
+    5.2s
+    ease-in-out
+    infinite;
+}
+
+.about-flower-middle {
+  width: 80px;
+  height: 68px;
+
+  top: 44.4%;
+  left: 44.6%;
+
+  background-image:
+    url("../assets/images/bunga1.png");
+
+  transform:
+    rotate(6deg);
+
+  animation:
+    aboutFlowerMiddle
+    4.7s
+    ease-in-out
+    infinite;
+}
+
+.about-flower-bottom {
+  width: 133px;
+  height: 92px;
+
+  top: 85.5%;
+  left: 1.3%;
+
+  background-image:
+    url("../assets/images/bunga5.png");
+
+  transform:
+    rotate(-8deg);
+
+  animation:
+    aboutFlowerBottom
+    5.8s
+    ease-in-out
+    infinite;
+}
+
+.about-butterfly-right {
+  width: 73px;
+  height: 100px;
+
+  top: 22.7%;
+  left: 77.5%;
+
+  background-image:
+    url("../assets/images/kupu4.png");
+
+  transform:
+    rotate(0deg);
+
+  animation:
+    aboutButterfly
+    3.8s
+    ease-in-out
+    infinite;
+}
+
+.about-bubble {
+  position: absolute;
+
+  border-radius:
+    50%;
+
+  z-index: 15;
+
+  will-change:
+    transform;
+
+  background:
+    radial-gradient(
+      circle at 22% 20%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0) 9%
+    ),
+
+    radial-gradient(
+      circle at 32% 33%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 6%
+    ),
+
+    radial-gradient(
+      circle at 26% 28%,
+      rgba(230, 185, 205, 0.55) 0%,
+      rgba(230, 185, 205, 0) 42%
+    ),
+
+    radial-gradient(
+      circle at 68% 72%,
+      rgba(185, 200, 135, 0.65) 0%,
+      rgba(185, 200, 135, 0) 55%
+    ),
+
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.1) 55%,
+      rgba(255, 255, 255, 0) 75%
+    );
+
+  border:
+    1px solid
+    rgba(200, 190, 130, 0.55);
+
+  box-shadow:
+    inset -4px -6px 10px
+      rgba(150, 160, 100, 0.35),
+
+    inset 4px 4px 8px
+      rgba(255, 255, 255, 0.55),
+
+    0 3px 6px
+      rgba(150, 140, 80, 0.2);
+}
+
+.about-bubble::after {
+  content: "";
+
+  position: absolute;
+
+  width: 32%;
+  height: 10%;
+
+  right: 20%;
+  bottom: 26%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.65
+    );
+
+  filter:
+    blur(2px);
+
+  border-radius:
+    50%;
+
+  transform:
+    rotate(-35deg);
+
+  pointer-events:
+    none;
+}
+
+.about-bubble-1 {
+  width: 70px;
+  height: 70px;
+
+  top: 32.1%;
+  left: 12.7%;
+
+  animation:
+    aboutBubbleOne
+    4.8s
+    ease-in-out
+    infinite;
+}
+
+.about-bubble-2 {
+  width: 42px;
+  height: 42px;
+
+  top: 41.1%;
+  left: 5.4%;
+
+  animation:
+    aboutBubbleTwo
+    5.6s
+    ease-in-out
+    infinite;
+}
+
+@keyframes aboutPhotoFloat {
+
+  0%,
+  100% {
+    transform:
+      translate(10px, 0);
+  }
+
+  50% {
+    transform:
+      translate(10px, -12px);
+  }
+}
+
+@keyframes aboutBubbleOne {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.03);
+  }
+}
+
+@keyframes aboutBubbleTwo {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      translateX(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      translateX(3px)
+      scale(1.04);
+  }
+}
+
+@keyframes aboutFlowerTop {
+
+  0%,
+  100% {
+    transform:
+      rotate(-8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(-3deg)
+      translateY(-6px);
+  }
+}
+
+@keyframes aboutFlowerMiddle {
+
+  0%,
+  100% {
+    transform:
+      rotate(6deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(10deg)
+      translateY(-5px);
+  }
+}
+
+@keyframes aboutFlowerBottom {
+
+  0%,
+  100% {
+    transform:
+      rotate(-7deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(-2deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes aboutButterfly {
+
+  0%,
+  100% {
+    transform:
+      rotate(8deg)
+      translateY(0)
+      translateX(0);
+  }
+
+  25% {
+    transform:
+      rotate(14deg)
+      translateY(-6px)
+      translateX(4px);
+  }
+
+  50% {
+    transform:
+      rotate(4deg)
+      translateY(-10px)
+      translateX(0);
+  }
+
+  75% {
+    transform:
+      rotate(12deg)
+      translateY(-4px)
+      translateX(5px);
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .about-content {
+    grid-template-columns:
+      56%
+      44%;
+
+    padding:
+      55px
+      40px;
+  }
+
+
+  .about-heading-image {
+    width: 105%;
+
+    max-width: 600px;
+
+    margin-bottom: 28px;
+  }
+
+
+  .about-description {
+    max-width: 560px;
+  }
+
+
+  .about-description p {
+    font-size: 13.5px;
+  }
+
+
+  .about-description
+  .about-intro {
+    font-size: 15.5px;
+  }
+
+
+  .about-photo-composition {
+    width: 330px;
+    height: 450px;
+  }
+
+}
+@media (max-width: 700px) {
+
+  .about-section {
+    height: auto;
+
+    min-height: 1050px;
+  }
+
+
+  .about-content {
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+      65px
+      28px;
+
+    transform:
+      none;
+  }
+
+
+  .about-left {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+
+  .about-heading-image {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-bottom: 24px;
+  }
+
+
+  .about-description {
+    max-width: 100%;
+  }
+
+
+  .about-description p {
+    font-size: 12.5px;
+
+    line-height: 1.45;
+  }
+
+
+  .about-description
+  .about-intro {
+    font-size: 14px;
+
+    line-height: 1.45;
+  }
+
+
+  .about-right {
+    height: 500px;
+
+    margin-top: 20px;
+  }
+
+
+  .about-photo-composition {
+    width: 300px;
+    height: 410px;
+
+    transform: none;
+  }
+
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .about-heading-image,
+  .about-description p,
+  .about-right {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .about-photo-composition,
+  .about-sticker,
+  .about-bubble {
+    animation: none;
+  }
+
+}

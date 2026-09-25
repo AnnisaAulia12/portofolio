@@ -1,0 +1,1334 @@
+.experience-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 28px 40px 30px;
+
+  background: transparent;
+  background-image: none;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.experience-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 1120px;
+
+  margin: 0 auto;
+}
+
+.experience-title-wrapper {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+
+.experience-title-image {
+  display: block;
+
+  width: 100%;
+  max-width: 460px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+.experience-scroll-area {
+  width: 100%;
+  max-width: 1080px;
+
+  height: 570px;
+
+  margin: 0 auto;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+
+  box-sizing: border-box;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+.experience-scroll-area::-webkit-scrollbar {
+  display: none;
+
+  width: 0;
+  height: 0;
+}
+
+.experience-group {
+  width: 100%;
+
+  margin-bottom: 32px;
+}
+
+
+.volunteer-group {
+  margin-top: 10px;
+}
+
+
+.achievement-group {
+  margin-top: 10px;
+
+  margin-bottom: 10px;
+}
+
+
+.experience-label {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 170px;
+
+  padding: 8px 22px;
+
+  margin-bottom: 16px;
+
+  border-radius: 999px;
+
+  background: #e6c1c3;
+
+  color: #77745b;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  box-shadow:
+    0 5px 10px
+    rgba(125, 105, 100, 0.16);
+}
+
+.experience-list {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.experience-card {
+  width: 100%;
+
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 16px 28px;
+
+  border-radius: 18px;
+
+  background: #f7f4e5;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 6px 12px
+    rgba(150, 140, 100, 0.10),
+
+    0 2px 4px
+    rgba(125, 115, 95, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.experience-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 16px
+    rgba(150, 140, 100, 0.14),
+
+    0 4px 8px
+    rgba(125, 115, 95, 0.10);
+}
+
+.experience-card p {
+  margin: 0;
+
+  color: #77745b;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.experience-scroll-hint {
+  margin: 12px 0 0;
+
+  text-align: center;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #9a8f77;
+
+  opacity: 0.8;
+}
+
+.experience-decor,
+.experience-bubble {
+  position: absolute;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 1;
+}
+
+
+.experience-decor {
+  background-repeat: no-repeat;
+
+  background-position: center;
+
+  background-size: contain;
+
+  will-change: transform;
+}
+
+.experience-bubble {
+  border-radius: 50%;
+
+  will-change: transform;
+
+  background:
+    radial-gradient(
+      circle at 22% 20%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0) 9%
+    ),
+
+    radial-gradient(
+      circle at 32% 33%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 6%
+    ),
+
+    radial-gradient(
+      circle at 26% 28%,
+      rgba(230, 185, 205, 0.55) 0%,
+      rgba(230, 185, 205, 0) 42%
+    ),
+
+    radial-gradient(
+      circle at 68% 72%,
+      rgba(185, 200, 135, 0.65) 0%,
+      rgba(185, 200, 135, 0) 55%
+    ),
+
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.1) 55%,
+      rgba(255, 255, 255, 0) 75%
+    );
+
+  border:
+    1px solid
+    rgba(200, 190, 130, 0.55);
+
+  box-shadow:
+    inset -4px -6px 10px
+    rgba(150, 160, 100, 0.35),
+
+    inset 4px 4px 8px
+    rgba(255, 255, 255, 0.55),
+
+    0 3px 6px
+    rgba(150, 140, 80, 0.2);
+}
+
+
+.experience-bubble::after {
+  content: "";
+
+  position: absolute;
+
+  width: 32%;
+  height: 10%;
+
+  right: 20%;
+  bottom: 26%;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+
+  filter: blur(2px);
+
+  border-radius: 50%;
+
+  transform: rotate(-35deg);
+}
+
+
+.experience-flower-a {
+  width: 130px;
+  height: 130px;
+
+  top: 65px;
+  right: 135px;
+
+  background-image:
+    url("../assets/images/bunga1.png");
+
+  animation:
+    expFloatOne
+    5.2s
+    ease-in-out
+    infinite;
+}
+
+.experience-flower-b {
+  width: 72px;
+  height: 72px;
+
+  top: 125px;
+  left: 38%;
+
+  background-image:
+    url("../assets/images/bunga2.png");
+
+  animation:
+    expFloatTwo
+    5.6s
+    ease-in-out
+    infinite;
+}
+
+.experience-flower-c {
+  width: 115px;
+  height: 115px;
+
+  left: 135px;
+  bottom: 55px;
+
+  background-image:
+    url("../assets/images/bunga5.png");
+
+  animation:
+    expFloatThree
+    6s
+    ease-in-out
+    infinite;
+}
+
+.experience-flower-d {
+  width: 72px;
+  height: 72px;
+
+  top: 75px;
+  right: 38%;
+
+  background-image:
+    url("../assets/images/bunga2.png");
+
+  animation:
+    expFloatOne
+    5.4s
+    ease-in-out
+    infinite;
+}
+
+.experience-butterfly-a {
+  width: 88px;
+  height: 112px;
+
+  top: 275px;
+  left: 105px;
+
+  background-image:
+    url("../assets/images/kupu4.png");
+
+  animation:
+    expButterfly
+    4.5s
+    ease-in-out
+    infinite;
+}
+
+.experience-butterfly-b {
+  width: 84px;
+  height: 108px;
+
+  right: 105px;
+  bottom: 115px;
+
+  background-image:
+    url("../assets/images/kupu4.png");
+
+  animation:
+    expButterflyTwo
+    4.8s
+    ease-in-out
+    infinite;
+}
+
+.experience-bubble-a {
+  width: 95px;
+  height: 95px;
+
+  top: 62px;
+  left: 165px;
+
+  animation:
+    expBubbleFloatOne
+    4.8s
+    ease-in-out
+    infinite;
+}
+
+.experience-bubble-b {
+  width: 62px;
+  height: 62px;
+
+  top: 155px;
+  left: 105px;
+
+  animation:
+    expBubbleFloatTwo
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+.experience-bubble-c {
+  width: 72px;
+  height: 72px;
+
+  top: 355px;
+  right: 100px;
+
+  animation:
+    expBubbleFloatThree
+    5.2s
+    ease-in-out
+    infinite;
+}
+
+.experience-bubble-d {
+  width: 92px;
+  height: 92px;
+
+  right: 115px;
+  bottom: 20px;
+
+  animation:
+    expBubbleFloatOne
+    5.8s
+    ease-in-out
+    infinite;
+}
+
+.experience-bubble-e {
+  width: 48px;
+  height: 48px;
+
+  top: 225px;
+  left: 130px;
+
+  animation:
+    expBubbleFloatTwo
+    4.7s
+    ease-in-out
+    infinite;
+}
+@keyframes expFloatOne {
+
+  0%,
+  100% {
+    transform:
+      rotate(8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(12deg)
+      translateY(-8px);
+  }
+}
+
+@keyframes expFloatTwo {
+
+  0%,
+  100% {
+    transform:
+      rotate(-10deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(-5deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes expFloatThree {
+
+  0%,
+  100% {
+    transform:
+      rotate(-12deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(-7deg)
+      translateY(-9px);
+  }
+}
+
+@keyframes expButterfly {
+
+  0%,
+  100% {
+    transform:
+      rotate(4deg)
+      translate(0, 0);
+  }
+
+  25% {
+    transform:
+      rotate(10deg)
+      translate(3px, -4px);
+  }
+
+  50% {
+    transform:
+      rotate(3deg)
+      translate(5px, -10px);
+  }
+
+  75% {
+    transform:
+      rotate(9deg)
+      translate(2px, -5px);
+  }
+}
+
+@keyframes expButterflyTwo {
+
+  0%,
+  100% {
+    transform:
+      rotate(-5deg)
+      translate(0, 0);
+  }
+
+  25% {
+    transform:
+      rotate(3deg)
+      translate(-3px, -4px);
+  }
+
+  50% {
+    transform:
+      rotate(-3deg)
+      translate(-5px, -9px);
+  }
+
+  75% {
+    transform:
+      rotate(4deg)
+      translate(-2px, -5px);
+  }
+}
+
+@keyframes expBubbleFloatOne {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.04);
+  }
+}
+
+@keyframes expBubbleFloatTwo {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(3px, -8px)
+      scale(1.04);
+  }
+}
+
+@keyframes expBubbleFloatThree {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-11px)
+      scale(1.04);
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .experience-section {
+    padding:
+      24px
+      28px
+      28px;
+  }
+
+
+  .experience-title-wrapper {
+    margin-bottom: 20px;
+  }
+
+
+  .experience-title-image {
+    max-width: 380px;
+  }
+
+
+  .experience-scroll-area {
+    height: 510px;
+  }
+
+
+  .experience-group {
+    margin-bottom: 28px;
+  }
+
+
+  .experience-label {
+    min-width: 150px;
+
+    padding:
+      7px
+      20px;
+
+    font-size: 18px;
+  }
+
+
+  .experience-card {
+    padding:
+      15px
+      22px;
+
+    border-radius: 16px;
+  }
+
+
+  .experience-card p {
+    font-size: 14px;
+  }
+
+
+  /* ORNAMENT TABLET */
+
+  .experience-flower-a {
+    width: 82px;
+    height: 82px;
+
+    right: 40px;
+  }
+
+
+  .experience-flower-b {
+    width: 47px;
+    height: 47px;
+
+    left: 33%;
+  }
+
+
+  .experience-flower-c {
+    width: 76px;
+    height: 76px;
+
+    left: 35px;
+  }
+
+
+  .experience-flower-d {
+    width: 46px;
+    height: 46px;
+
+    right: 30%;
+  }
+
+
+  .experience-butterfly-a {
+    width: 55px;
+    height: 72px;
+
+    left: 30px;
+  }
+
+
+  .experience-butterfly-b {
+    width: 55px;
+    height: 72px;
+
+    right: 28px;
+  }
+
+
+  .experience-bubble-a {
+    width: 62px;
+    height: 62px;
+
+    left: 60px;
+  }
+
+
+  .experience-bubble-b {
+    width: 42px;
+    height: 42px;
+
+    left: 28px;
+  }
+
+
+  .experience-bubble-c {
+    width: 48px;
+    height: 48px;
+
+    right: 28px;
+  }
+
+
+  .experience-bubble-d {
+    width: 60px;
+    height: 60px;
+
+    right: 30px;
+  }
+
+
+  .experience-bubble-e {
+    width: 31px;
+    height: 31px;
+
+    left: 45px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .experience-section {
+    padding:
+      20px
+      18px
+      24px;
+  }
+
+
+  .experience-title-wrapper {
+    margin-bottom: 16px;
+  }
+
+
+  .experience-title-image {
+    max-width: 280px;
+  }
+
+
+  .experience-scroll-area {
+    height: 430px;
+  }
+
+
+  .experience-group {
+    margin-bottom: 24px;
+  }
+
+
+  .experience-label {
+    min-width: 135px;
+
+    padding:
+      7px
+      18px;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+  }
+
+
+  .experience-list {
+    gap: 12px;
+  }
+
+
+  .experience-card {
+    min-height: 62px;
+
+    padding:
+      14px
+      18px;
+
+    border-radius: 15px;
+  }
+
+
+  .experience-card p {
+    font-size: 13px;
+
+    line-height: 1.45;
+  }
+
+
+  .experience-scroll-hint {
+    margin-top: 10px;
+
+    font-size: 11px;
+  }
+
+
+  /* ORNAMENT MOBILE */
+
+  .experience-flower-a {
+    width: 62px;
+    height: 62px;
+
+    right: 10px;
+  }
+
+
+  .experience-flower-b {
+    width: 36px;
+    height: 36px;
+
+    left: 25%;
+  }
+
+
+  .experience-flower-c {
+    width: 62px;
+    height: 62px;
+
+    left: 8px;
+  }
+
+
+  .experience-flower-d {
+    width: 36px;
+    height: 36px;
+
+    right: 22%;
+  }
+
+
+  .experience-butterfly-a {
+    width: 44px;
+    height: 58px;
+
+    left: 5px;
+  }
+
+
+  .experience-butterfly-b {
+    width: 44px;
+    height: 58px;
+
+    right: 5px;
+  }
+
+
+  .experience-bubble-a {
+    width: 50px;
+    height: 50px;
+
+    left: 20px;
+  }
+
+
+  .experience-bubble-b {
+    width: 32px;
+    height: 32px;
+
+    left: 5px;
+  }
+
+
+  .experience-bubble-c {
+    width: 40px;
+    height: 40px;
+
+    right: 5px;
+  }
+
+
+  .experience-bubble-d {
+    width: 50px;
+    height: 50px;
+
+    right: 8px;
+  }
+
+
+  .experience-bubble-e {
+    width: 25px;
+    height: 25px;
+
+    left: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .experience-decor,
+  .experience-bubble {
+    animation: none !important;
+  }
+
+
+  .experience-card {
+    transition: none;
+  }
+}
+
+.experience-title-wrapper {
+  opacity: 0;
+
+  transform:
+    translateY(-45px)
+    scale(0.9);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.experience-section.is-inview
+.experience-title-wrapper {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.experience-group {
+  opacity: 0;
+
+  transform:
+    translateY(45px)
+    scale(0.97);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ORGANIZATION */
+
+.experience-section.is-inview
+.experience-group-1 {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.15s;
+}
+
+
+/* VOLUNTEERS */
+
+.experience-section.is-inview
+.experience-group-2 {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.30s;
+}
+
+/* ACHIEVEMENT */
+
+.experience-section.is-inview
+.experience-group-3 {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.40s;
+}
+
+.experience-label {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.experience-section.is-inview
+.experience-label {
+  animation:
+    experienceLabelPop
+    0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+@keyframes experienceLabelPop {
+
+  0% {
+    transform:
+      scale(0.75);
+  }
+
+  70% {
+    transform:
+      scale(1.05);
+  }
+
+  100% {
+    transform:
+      scale(1);
+  }
+
+}
+
+.experience-card {
+  opacity: 0;
+
+  transform:
+    translateY(25px)
+    scale(0.98);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+
+/* CARD 1 */
+
+.experience-section.is-inview
+.experience-list
+.experience-card:nth-child(1) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.24s;
+}
+
+/* CARD 2 */
+
+.experience-section.is-inview
+.experience-list
+.experience-card:nth-child(2) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.34s;
+}
+
+
+/* CARD 3 */
+
+.experience-section.is-inview
+.experience-list
+.experience-card:nth-child(3) {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  transition-delay:
+    0.44s;
+}
+
+.experience-decor,
+.experience-bubble {
+  opacity: 0;
+}
+
+
+/* bunga */
+
+.experience-section.is-inview
+.experience-flower-a {
+  opacity: 1;
+
+  animation:
+    experienceDecorPop 0.7s 0.10s both,
+    expFloatOne 5.2s 0.8s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-flower-b {
+  opacity: 1;
+
+  animation:
+    experienceDecorPop 0.7s 0.20s both,
+    expFloatTwo 5.6s 0.9s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-flower-c {
+  opacity: 1;
+
+  animation:
+    experienceDecorPop 0.7s 0.30s both,
+    expFloatThree 6s 1s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-flower-d {
+  opacity: 1;
+
+  animation:
+    experienceDecorPop 0.7s 0.25s both,
+    expFloatOne 5.4s 0.95s ease-in-out infinite;
+}
+
+
+/* butterfly */
+
+.experience-section.is-inview
+.experience-butterfly-a {
+  opacity: 1;
+
+  animation:
+    experienceDecorPop 0.7s 0.35s both,
+    expButterfly 4.5s 1.05s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-butterfly-b {
+  opacity: 1;
+
+  animation:
+    experienceDecorPop 0.7s 0.40s both,
+    expButterflyTwo 4.8s 1.1s ease-in-out infinite;
+}
+
+
+/* bubbles */
+
+.experience-section.is-inview
+.experience-bubble-a {
+  opacity: 1;
+
+  animation:
+    experienceBubblePop 0.65s 0.10s both,
+    expBubbleFloatOne 4.8s 0.8s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-bubble-b {
+  opacity: 1;
+
+  animation:
+    experienceBubblePop 0.65s 0.18s both,
+    expBubbleFloatTwo 5.5s 0.88s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-bubble-c {
+  opacity: 1;
+
+  animation:
+    experienceBubblePop 0.65s 0.26s both,
+    expBubbleFloatThree 5.2s 0.96s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-bubble-d {
+  opacity: 1;
+
+  animation:
+    experienceBubblePop 0.65s 0.34s both,
+    expBubbleFloatOne 5.8s 1.04s ease-in-out infinite;
+}
+
+
+.experience-section.is-inview
+.experience-bubble-e {
+  opacity: 1;
+
+  animation:
+    experienceBubblePop 0.65s 0.42s both,
+    expBubbleFloatTwo 4.7s 1.12s ease-in-out infinite;
+}
+
+@keyframes experienceDecorPop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.55)
+      translateY(20px);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      scale(1.08)
+      translateY(-3px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+@keyframes experienceBubblePop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.4);
+  }
+
+  65% {
+    opacity: 1;
+
+    transform:
+      scale(1.12);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+.experience-scroll-hint {
+  opacity: 0;
+
+  transform:
+    translateY(10px);
+
+  transition:
+    opacity 0.6s ease 0.55s,
+    transform 0.6s ease 0.55s;
+}
+
+
+.experience-section.is-inview
+.experience-scroll-hint {
+  opacity: 0.8;
+
+  transform:
+    translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .experience-title-wrapper,
+  .experience-group,
+  .experience-card,
+  .experience-decor,
+  .experience-bubble,
+  .experience-scroll-hint {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+
+    animation: none !important;
+  }
+
+}

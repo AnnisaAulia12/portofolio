@@ -1,0 +1,450 @@
+@import url(
+  "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+);
+
+
+/* MARYKATE */
+
+@font-face {
+  font-family: "Marykate";
+
+  src: url("../assets/fonts/Marykate.ttf")
+    format("truetype");
+
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+:root {
+  --pink: #e8c7cf;
+  --soft-pink: #f5e5e9;
+
+  --olive: #aaa66c;
+  --dark-olive: #756f59;
+
+  --cream: #f7f1dc;
+
+  --text: #655f55;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  min-height: 100%;
+}
+
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-family: "Poppins", sans-serif;
+
+  background: #fffafa;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: visible;
+}
+
+
+button,
+a {
+  font-family: inherit;
+}
+
+
+button {
+  border: none;
+
+  cursor: pointer;
+}
+
+
+img {
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+.section-placeholder {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fff9fa;
+
+  color: var(--dark-olive);
+
+  font-size: 40px;
+
+  font-weight: 600;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  background-image: url("../assets/images/Bg.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
+
+  background-color: #fffafa;
+}
+
+
+/* root jangan punya background sendiri */
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background: transparent;
+}
+
+.hero,
+.about-section,
+.skills-projects-section,
+.experience-section,
+.contact-section {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.hero-bg {
+  display: none;
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+.about-section {
+  height: auto !important;
+
+  min-height: 680px !important;
+
+  padding-top: 40px;
+  padding-bottom: 45px;
+}
+
+
+
+
+.about-content {
+  height: auto !important;
+
+  min-height: 600px;
+}
+
+.skills-projects-section {
+  min-height: auto !important;
+
+  padding-top: 55px !important;
+  padding-bottom: 65px !important;
+}
+
+
+.experience-section {
+  height: auto !important;
+  min-height: auto !important;
+
+  padding-top: 55px !important;
+  padding-bottom: 65px !important;
+}
+
+
+.experience-group {
+  margin-bottom: 42px !important;
+}
+
+
+.experience-group:last-child {
+  margin-bottom: 0 !important;
+}
+
+.contact-section {
+  min-height: auto !important;
+
+  padding-top: 55px !important;
+  padding-bottom: 70px !important;
+}
+
+.hero,
+.about-section,
+.skills-projects-section,
+.experience-section,
+.contact-section {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+
+  .about-section {
+    min-height: 620px !important;
+
+    padding-top: 40px;
+    padding-bottom: 45px;
+  }
+
+
+  .skills-projects-section,
+  .experience-section,
+  .contact-section {
+    padding-top: 50px !important;
+    padding-bottom: 55px !important;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .about-section {
+    min-height: auto !important;
+
+    padding-top: 50px;
+    padding-bottom: 55px;
+  }
+
+
+  .about-content {
+    min-height: auto;
+  }
+
+
+  .skills-projects-section,
+  .experience-section,
+  .contact-section {
+    min-height: auto !important;
+
+    padding-top: 50px !important;
+    padding-bottom: 55px !important;
+  }
+
+
+  .experience-group {
+    margin-bottom: 35px !important;
+  }
+
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  background-color: #fffafa;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url("../assets/images/Bg.png");
+
+  background-size: auto;
+
+  background-repeat: repeat;
+
+  background-position:
+    top
+    left;
+}
+
+.about-section,
+.skills-projects-section,
+.experience-section,
+.contact-section {
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.about-section::before,
+.skills-projects-section::before,
+.experience-section::before,
+.contact-section::before {
+  background-image: none !important;
+}
+
+.hero,
+.about-section,
+.sp-section,
+.experience-section,
+.contact-section {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero {
+  /*
+    Sedikit lebih pendek dari 1 layar penuh.
+    Jadi About muncul lebih cepat.
+  */
+  height: 94vh !important;
+  min-height: 680px !important;
+}
+
+.about-section {
+  /*
+    Jangan paksa 100vh.
+    Tinggi mengikuti isi.
+  */
+  height: auto !important;
+
+  min-height: 760px !important;
+
+  padding-top: 20px !important;
+  padding-bottom: 25px !important;
+}
+
+.about-content {
+  height: auto !important;
+
+  min-height: 700px;
+
+  transform:
+    translateY(-25px) !important;
+}
+
+.sp-section {
+  height: auto !important;
+  min-height: auto !important;
+
+  padding-top: 25px !important;
+  padding-bottom: 35px !important;
+}
+
+.sp-stage {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.experience-section {
+  height: auto !important;
+  min-height: auto !important;
+
+  padding-top: 35px !important;
+  padding-bottom: 45px !important;
+}
+
+.contact-section {
+  height: auto !important;
+  min-height: auto !important;
+
+  padding-top: 40px !important;
+  padding-bottom: 55px !important;
+}
+
+
+@media (max-width: 1000px) {
+
+  .hero {
+    height: 96vh !important;
+  }
+
+
+  .about-section {
+    min-height: 700px !important;
+
+    padding-top: 25px !important;
+    padding-bottom: 30px !important;
+  }
+
+
+  .about-content {
+    min-height: 650px;
+
+    transform:
+      translateY(-15px) !important;
+  }
+
+
+  .sp-section {
+    padding-top: 25px !important;
+    padding-bottom: 35px !important;
+  }
+
+
+  .experience-section {
+    padding-top: 35px !important;
+    padding-bottom: 40px !important;
+  }
+
+
+  .contact-section {
+    padding-top: 35px !important;
+    padding-bottom: 45px !important;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .hero {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+
+  .about-section {
+    min-height: auto !important;
+
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+
+  .about-content {
+    min-height: auto;
+
+    transform:
+      none !important;
+  }
+
+
+  .sp-section {
+    padding-top: 35px !important;
+    padding-bottom: 40px !important;
+  }
+
+
+  .experience-section {
+    padding-top: 40px !important;
+    padding-bottom: 45px !important;
+  }
+
+
+  .contact-section {
+    padding-top: 40px !important;
+    padding-bottom: 50px !important;
+  }
+
+}
