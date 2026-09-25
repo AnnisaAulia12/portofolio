@@ -1,10 +1,9 @@
 import React from "react";
 
-import About from "./sections/about.jsx";
-import SkillProjects from "./sections/skillProjects.jsx";
+import About from "./sections/About.jsx";
+import SkillProjects from "./sections/SkillProjects.jsx";
 import Experience from "./sections/Experience.jsx";
 import Contact from "./sections/Contact.jsx";
-
 
 /* =========================================
    ASSETS
