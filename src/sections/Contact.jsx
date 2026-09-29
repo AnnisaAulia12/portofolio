@@ -6,6 +6,11 @@ const portfolioPdf = new URL(
   import.meta.url
 ).href;
 
+const cvPdf = new URL(
+  "../assets/files/AnnisaCV.pdf",
+  import.meta.url
+).href;
+
 function Contact() {
   const [phase, setPhase] = useState("closed");
   const [inView, setInView] = useState(false);
@@ -14,7 +19,6 @@ function Contact() {
 
   const openTimerRef = useRef(null);
   const closeTimerRef = useRef(null);
-
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -117,9 +121,7 @@ function Contact() {
 
       {}
 
-      <div
-        className={`envelope-scene ${phase}`}
-      >
+      <div className={`envelope-scene ${phase}`}>
         <div className="envelope">
           {/* ENVELOPE BACK */}
 
@@ -127,7 +129,6 @@ function Contact() {
             className="envelope-back"
             aria-hidden="true"
           ></div>
-
 
           <div className="contact-letter">
             <h2 className="contact-title">
@@ -181,25 +182,52 @@ function Contact() {
               • • •
             </div>
 
-            {/* PORTFOLIO */}
+            {/* PORTFOLIO & CV */}
 
-            <div className="contact-action-row">
-              <a
-                href={portfolioPdf}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-view-button"
-              >
-                View Portfolio
-              </a>
+            <div className="contact-document-row">
 
-              <a
-                href={portfolioPdf}
-                download="Annisa-Portofolio.pdf"
-                className="contact-download-button"
-              >
-                Download PDF
-              </a>
+              <div className="contact-document-group">
+                <a
+                  href={portfolioPdf}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-view-button"
+                >
+                  View Portfolio
+                </a>
+
+                <a
+                  href={portfolioPdf}
+                  download="Annisa-Portofolio.pdf"
+                  className="contact-download-button"
+                  aria-label="Download Portfolio"
+                  title="Download Portfolio"
+                >
+                  ↓
+                </a>
+              </div>
+
+              <div className="contact-document-group">
+                <a
+                  href={cvPdf}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-view-button"
+                >
+                  View CV
+                </a>
+
+                <a
+                  href={cvPdf}
+                  download="Annisa-Aulia-Rahmah-CV.pdf"
+                  className="contact-download-button"
+                  aria-label="Download CV"
+                  title="Download CV"
+                >
+                  ↓
+                </a>
+              </div>
+
             </div>
 
             {/* CLOSE BUTTON */}
@@ -245,8 +273,6 @@ function Contact() {
           )}
         </div>
       </div>
-
-      
 
       <div
         className="contact-bottom-bar"

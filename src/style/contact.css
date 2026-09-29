@@ -43,9 +43,7 @@
 
   z-index: 5;
 
- 
   margin-bottom: 110px;
-
 
   opacity: 0;
 
@@ -239,6 +237,7 @@
       );
   }
 }
+
 @keyframes paperBackInside {
 
   0% {
@@ -319,6 +318,7 @@
       rgba(105, 82, 88, 0.18)
     );
 }
+
 .envelope-scene.opening
 .envelope-top-flap {
   animation:
@@ -590,7 +590,6 @@
     box-shadow 0.25s ease;
 }
 
-
 .envelope-open-button:hover {
   transform:
     translate(-50%, -50%)
@@ -632,6 +631,7 @@
 
   paint-order: stroke fill;
 }
+
 .contact-email-row {
   display: flex;
 
@@ -715,7 +715,6 @@
     background-color 0.2s ease;
 }
 
-
 .contact-small-button:hover {
   transform:
     translateY(-2px);
@@ -751,20 +750,37 @@
   gap: 10px;
 }
 
-.contact-view-button,
-.contact-download-button {
-  min-height: 34px;
+/* =========================
+   PORTFOLIO & CV
+   ========================= */
 
-  display: inline-flex;
+.contact-document-row {
+  display: flex;
 
   align-items: center;
   justify-content: center;
 
-  padding:
-    0
-    15px;
+  flex-wrap: nowrap;
 
-  border-radius: 15px;
+  gap: 18px;
+}
+
+.contact-document-group {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+}
+
+.contact-view-button,
+.contact-download-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
 
   color: #7d765d;
 
@@ -776,26 +792,44 @@
     transform 0.2s ease,
     background-color 0.2s ease,
     box-shadow 0.2s ease;
+
+  box-sizing: border-box;
 }
 
-
 .contact-view-button {
+  min-height: 34px;
+
+  padding:
+    0
+    15px;
+
+  border-radius: 15px;
+
   background: #ead6da;
 
   font-size: 11px;
 }
 
-
 .contact-download-button {
-  background: #f7eeee;
+  width: 28px;
+  height: 28px;
+
+  min-height: 28px;
+
+  padding: 0;
 
   border:
     1px solid
     #c4afb2;
 
-  font-size: 9px;
-}
+  border-radius: 50%;
 
+  background: #f7eeee;
+
+  font-size: 15px;
+
+  line-height: 1;
+}
 
 .contact-view-button:hover,
 .contact-download-button:hover {
@@ -853,14 +887,12 @@
     background-color 0.2s ease;
 }
 
-
 .contact-close-button:hover {
   transform:
     translateY(-2px);
 
   background: #dfc3c8;
 }
-
 
 .contact-close-button:disabled {
   pointer-events: none;
@@ -876,9 +908,6 @@
 
   z-index: 2;
 
-  /*
-    Initial pop-up state
-  */
   opacity: 0;
 
   scale: 0.65;
@@ -893,6 +922,7 @@
         1
       );
 }
+
 .contact-section.is-inview
 .contact-decor,
 .contact-section.is-inview
@@ -907,18 +937,15 @@
   transition-delay: 0.15s;
 }
 
-
 .contact-section.is-inview
 .contact-bubble-1 {
   transition-delay: 0.25s;
 }
 
-
 .contact-section.is-inview
 .contact-flower-2 {
   transition-delay: 0.35s;
 }
-
 
 .contact-section.is-inview
 .contact-bubble-2 {
@@ -958,9 +985,6 @@
 
   right: 11%;
 
-  /*
-    Tetap dijauhkan dari bottom bar
-  */
   bottom: 175px;
 
   background-image:
@@ -1092,7 +1116,6 @@
   }
 }
 
-
 @keyframes contactFlowerTwo {
 
   0%,
@@ -1122,7 +1145,6 @@
       translateY(-10px);
   }
 }
-
 
 @keyframes contactBubbleTwo {
 
@@ -1193,7 +1215,6 @@
 
   pointer-events: none;
 
-
   opacity: 0;
 
   translate:
@@ -1235,18 +1256,13 @@
       75px;
   }
 
-
   .envelope-scene {
     width: 560px;
 
     height: 560px;
 
-    /*
-      Gap tablet
-    */
     margin-bottom: 85px;
   }
-
 
   .envelope {
     width: 560px;
@@ -1255,7 +1271,6 @@
 
     --paper-end: -200px;
   }
-
 
   .contact-letter {
     top: 35px;
@@ -1269,7 +1284,6 @@
       20px;
   }
 
-
   .contact-title {
     margin-bottom: 16px;
 
@@ -1280,16 +1294,13 @@
       #7d785d;
   }
 
-
   .contact-email {
     font-size: 12px;
   }
 
-
   .contact-close-button {
     margin-top: 10px;
   }
-
 
   .contact-flower-1 {
     width: 80px;
@@ -1297,7 +1308,6 @@
 
     left: 4%;
   }
-
 
   .contact-flower-2 {
     width: 92px;
@@ -1308,14 +1318,12 @@
     bottom: 145px;
   }
 
-
   .contact-bubble-1 {
     width: 60px;
     height: 60px;
 
     right: 6%;
   }
-
 
   .contact-bubble-2 {
     width: 42px;
@@ -1325,7 +1333,6 @@
 
     bottom: 165px;
   }
-
 
   .contact-bottom-bar {
     height: 46px;
@@ -1343,18 +1350,13 @@
       60px;
   }
 
-
   .envelope-scene {
     width: 340px;
 
     height: 420px;
 
-    /*
-      Gap mobile
-    */
     margin-bottom: 65px;
   }
-
 
   .envelope {
     width: 340px;
@@ -1363,7 +1365,6 @@
 
     --paper-end: -120px;
   }
-
 
   .contact-letter {
     top: 22px;
@@ -1383,7 +1384,6 @@
       5px;
   }
 
-
   .contact-title {
     margin-bottom: 7px;
 
@@ -1394,13 +1394,11 @@
       #7d785d;
   }
 
-
   .contact-email-row {
     gap: 3px;
 
     margin-bottom: 3px;
   }
-
 
   .contact-email {
     min-height: 22px;
@@ -1412,7 +1410,6 @@
     font-size: 7px;
   }
 
-
   .contact-small-button {
     min-height: 19px;
 
@@ -1423,7 +1420,6 @@
     font-size: 6px;
   }
 
-
   .contact-divider {
     margin:
       2px
@@ -1433,23 +1429,47 @@
     font-size: 6px;
   }
 
-
   .contact-action-row {
     gap: 4px;
   }
 
+  /* Portfolio & CV tetap satu baris */
+  .contact-document-row {
+    flex-wrap: nowrap;
 
-  .contact-view-button,
-  .contact-download-button {
+    gap: 9px;
+
+    width: 100%;
+  }
+
+  .contact-document-group {
+    gap: 3px;
+
+    flex-shrink: 0;
+  }
+
+  .contact-view-button {
     min-height: 21px;
 
     padding:
       0
       7px;
 
+    border-radius: 10px;
+
     font-size: 6px;
   }
 
+  .contact-download-button {
+    width: 18px;
+    height: 18px;
+
+    min-height: 18px;
+
+    padding: 0;
+
+    font-size: 9px;
+  }
 
   .contact-close-button {
     min-width: 78px;
@@ -1465,7 +1485,6 @@
     font-size: 6px;
   }
 
-
   .envelope-open-button {
     width: 75px;
 
@@ -1478,7 +1497,6 @@
       #77745b;
   }
 
-
   .contact-flower-1 {
     width: 55px;
 
@@ -1488,7 +1506,6 @@
 
     left: 1%;
   }
-
 
   .contact-flower-2 {
     width: 66px;
@@ -1500,7 +1517,6 @@
     bottom: 115px;
   }
 
-
   .contact-bubble-1 {
     width: 45px;
 
@@ -1511,7 +1527,6 @@
     right: 3%;
   }
 
-
   .contact-bubble-2 {
     width: 30px;
 
@@ -1521,7 +1536,6 @@
 
     bottom: 130px;
   }
-
 
   .contact-bottom-bar {
     height: 42px;
@@ -1546,7 +1560,6 @@
     transition:
       none !important;
   }
-
 
   .contact-decor,
   .contact-bubble {
