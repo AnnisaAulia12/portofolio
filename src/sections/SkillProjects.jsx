@@ -53,6 +53,31 @@ const kupu4 = new URL(
   import.meta.url
 ).href;
 
+const SKILL_LOGOS = {
+  JavaScript: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript logo" },
+  TypeScript: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript logo" },
+  C: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg", alt: "C logo" },
+  Dart: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg", alt: "Dart logo" },
+  Java: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", alt: "Java logo" },
+  Python: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", alt: "Python logo" },
+  MySQL: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", alt: "MySQL logo" },
+  Supabase: { src: "https://cdn.simpleicons.org/supabase/3ECF8E", alt: "Supabase logo" },
+  "Git & Github": { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", alt: "GitHub logo" },
+  Vercel: { src: "https://cdn.simpleicons.org/vercel/000000", alt: "Vercel logo" },
+  "Android Studio": { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg", alt: "Android Studio logo" },
+  "Thunder Client": { fallback: "TC", alt: "Thunder Client mark" },
+  Canva: { src: "https://cdn.simpleicons.org/canva/00C4CC", alt: "Canva logo" },
+  Figma: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", alt: "Figma logo" },
+  IbisPaint: { fallback: "IP", alt: "IbisPaint mark" },
+  CSS: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", alt: "CSS logo" },
+  HTML: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML logo" },
+  React: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React logo" },
+  Flutter: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", alt: "Flutter logo" },
+  "Rest API": { fallback: "API", alt: "REST API mark" },
+  "Node.js": { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js logo" },
+  Express: { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", alt: "Express logo" },
+};
+
 const SKILLS = [
   {
     id: "language",
@@ -739,9 +764,25 @@ function SkillProjects() {
                                           35,
                                     }}
                                   >
-                                    {
-                                      item
-                                    }
+                                    <span className="sp-skill-item">
+                                      {SKILL_LOGOS[item]?.src ? (
+                                        <img
+                                          className="sp-skill-logo"
+                                          src={SKILL_LOGOS[item].src}
+                                          alt={SKILL_LOGOS[item].alt}
+                                          loading="lazy"
+                                          aria-hidden="true"
+                                        />
+                                      ) : (
+                                        <span
+                                          className="sp-skill-logo sp-skill-logo--fallback"
+                                          aria-hidden="true"
+                                        >
+                                          {SKILL_LOGOS[item]?.fallback || item.slice(0, 2)}
+                                        </span>
+                                      )}
+                                      <span>{item}</span>
+                                    </span>
                                   </li>
                                 )
                               )}

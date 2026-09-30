@@ -1249,7 +1249,76 @@ li:nth-child(2) {
 }
 
 
+
+/* Skill logos: tidy spacing, scoped only to the skills panel. */
+.sp-skill .sp-rows {
+  max-width: calc(var(--u) * 285);
+}
+
+.sp-skill .sp-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: calc(var(--u) * 16);
+  row-gap: calc(var(--u) * 9);
+}
+
+.sp-skill .sp-row li {
+  display: inline-flex;
+  align-items: center;
+  min-height: calc(var(--u) * 22);
+}
+
+.sp-skill .sp-row li .sp-skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--u) * 5);
+  vertical-align: middle;
+}
+
+.sp-skill .sp-row li .sp-skill-logo {
+  display: inline-block;
+  flex: 0 0 calc(var(--u) * 15);
+  width: calc(var(--u) * 15);
+  height: calc(var(--u) * 15);
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.sp-skill .sp-row li .sp-skill-logo--fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: rgba(115, 112, 84, 0.12);
+  color: var(--sp-text);
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: calc(var(--u) * 7);
+  font-weight: 800;
+  line-height: 1;
+}
+
 @media (max-width: 900px) {
+  .sp-skill .sp-rows {
+    max-width: 100%;
+  }
+
+  .sp-skill .sp-row {
+    column-gap: 18px;
+    row-gap: 9px;
+  }
+
+  .sp-skill .sp-row li {
+    min-height: 22px;
+  }
+
+  .sp-skill .sp-row li .sp-skill-logo {
+    flex-basis: 15px;
+    width: 15px;
+    height: 15px;
+  }
+
+
 
   .sp-section {
     --u:
