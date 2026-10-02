@@ -15,15 +15,14 @@ export default function About({ photo, flower }) {
             Hi! I'm Annisa Aulia Rahmah, a Computer Science student at BINUS University.
           </p>
           <p>
-            I enjoy working across the full journey of a product: from mapping user flows and 
-            designing interfaces, to building reusable components and turning those designs into 
-            clean, functional code. In my university and group projects, I take part in both the design
-            and the implementation, so the final result stays consistent with the original idea
+            On the design side, I map user flows, design interfaces, and craft the components a product needs. 
+            On the engineering side, I turn those designs into clean, functional code. 
+            In my university and group projects I take part in both, so the final result stays true to the original idea.
           </p>
           <p>
-            I'm drawn to product development, where design thinking and technical skills meet.
-            I'm continuously learning through real-world projects to build digital products 
-            that are not only well-structured, but also intuitive and enjoyable to use.
+            I'm drawn to product development, where design thinking and technical skills meet. 
+            I'm continuously learning through real-world projects to build products that are well-structured, 
+            intuitive, and enjoyable to use.
           </p>
         </div>
       </div>

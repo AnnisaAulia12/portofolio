@@ -82,7 +82,7 @@ export default function App() {
               <Typing text="Computer Science Student @ BINUS University" speed={28} delay={1900} />
             </p>
             <p className="lead">
-              <Typing text="UI/UX design & front-end development — turning ideas into intuitive designs and functional digital experiences." speed={14} delay={3300} />
+              <Typing text="Software engineering & UI/UX design — turning ideas into intuitive, functional digital products." speed={14} delay={3300} />
             </p>
             <div className="btn-row">
               <a className="btn btn-primary" href="#skills">View Projects</a>
