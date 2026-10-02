@@ -1,308 +1,109 @@
-import React from "react";
-
-import About from "./sections/About.jsx";
-import SkillProjects from "./sections/SkillProjects.jsx";
+import React, { useEffect, useState } from "react";
+import Typing from "./components/Typing.jsx";
+import About from "./sections/about.jsx";
+import SkillProjects from "./sections/skillProjects.jsx";
 import Experience from "./sections/Experience.jsx";
 import Contact from "./sections/Contact.jsx";
 
-/* =========================================
-   ASSETS
-========================================= */
+const IMG = {
+  bunga1: new URL("./assets/images/bunga1.png", import.meta.url).href,
+  bunga3: new URL("./assets/images/bunga3.png", import.meta.url).href,
+  bunga5: new URL("./assets/images/bunga5.png", import.meta.url).href,
+  kupu4: new URL("./assets/images/kupu4.png", import.meta.url).href,
+  photo: new URL("./assets/images/photo.png", import.meta.url).href,
+};
+const BUBBLES = [
+  [6, 38, 14, 0], [16, 22, 18, -5], [28, 54, 22, -9], [41, 30, 16, -3], [55, 46, 20, -12],
+  [66, 26, 15, -7], [77, 60, 24, -2], [88, 34, 17, -10], [94, 20, 19, -6], [49, 18, 21, -14],
+];
+const NAV = [
+  ["about", "About"],
+  ["skills", "Skill & Projects"],
+  ["experience", "Experience"],
+  ["contact", "Contact"],
+];
 
-const Bg = new URL(
-  "./assets/images/Bg.png",
-  import.meta.url
-).href;
+export default function App() {
+  const [active, setActive] = useState("home");
+  const [progress, setProgress] = useState(0);
 
-const bunga1 = new URL(
-  "./assets/images/bunga1.png",
-  import.meta.url
-).href;
+  // animasi diputar ulang setiap section masuk layar (dan reset saat keluar)
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (es) => es.forEach((e) => e.target.classList.toggle("in", e.isIntersecting)),
+      { threshold: 0.15, rootMargin: "0px 0px -6% 0px" }
+    );
+    document.querySelectorAll(".reveal, .section").forEach((el) => io.observe(el));
 
-const bunga2 = new URL(
-  "./assets/images/bunga2.png",
-  import.meta.url
-).href;
+    // menu aktif mengikuti section yang sedang dilihat
+    const spy = new IntersectionObserver(
+      (es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    document.querySelectorAll("section[id]").forEach((el) => spy.observe(el));
 
-const bunga3 = new URL(
-  "./assets/images/bunga3.png",
-  import.meta.url
-).href;
-
-const bunga5 = new URL(
-  "./assets/images/bunga5.png",
-  import.meta.url
-).href;
-
-const HeroName = new URL(
-  "./assets/images/HeroName.png",
-  import.meta.url
-).href;
-
-const kupu4 = new URL(
-  "./assets/images/kupu4.png",
-  import.meta.url
-).href;
-
-
-/* =========================================
-   APP
-========================================= */
-
-function App() {
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
+    const onScroll = () => {
+      const h = document.documentElement;
+      setProgress(h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { io.disconnect(); spy.disconnect(); window.removeEventListener("scroll", onScroll); };
+  }, []);
 
   return (
     <>
-
-      {/* =====================================
-          HERO
-      ====================================== */}
-
-      <section
-        className="hero"
-        id="home"
-      >
-
-        {/* BACKGROUND */}
-
-        <img
-          src={Bg}
-          alt=""
-          className="hero-bg"
-        />
-
-
-        {/* HEADER SCALLOP */}
-
-        <div className="top-header"></div>
-
-
-        {/* =====================================
-            NAVIGATION
-        ====================================== */}
-
-        <nav className="hero-nav">
-
-          <button
-            type="button"
-            onClick={() =>
-              scrollToSection("about")
-            }
-          >
-            ABOUT ME
-          </button>
-
-
-          <button
-            type="button"
-            onClick={() =>
-              scrollToSection("skills")
-            }
-          >
-            SKILL & PROJECTS
-          </button>
-
-
-          <button
-            type="button"
-            onClick={() =>
-              scrollToSection("experience")
-            }
-          >
-            EXPERIENCE
-          </button>
-
-
-          <button
-            type="button"
-            onClick={() =>
-              scrollToSection("contact")
-            }
-          >
-            CONTACT
-          </button>
-
+      <div className="bubbles" aria-hidden="true">
+        {BUBBLES.map(([x, s, d, delay], i) => (
+          <span key={i} className="bub"
+            style={{ left: `${x}%`, width: s, height: s, animationDuration: `${d + 8}s`, animationDelay: `${delay}s` }} />
+        ))}
+      </div>
+      <div className="progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
+      <header className="nav">
+        <a className="nav-logo" href="#home">Annisa</a>
+        <nav>
+          {NAV.map(([id, label]) => (
+            <a key={id} href={`#${id}`} className={active === id ? "active" : ""}>{label}</a>
+          ))}
         </nav>
+      </header>
 
-
-        {/* =====================================
-            BUBBLES
-        ====================================== */}
-
-        <span className="bubble bubble-1"></span>
-        <span className="bubble bubble-2"></span>
-        <span className="bubble bubble-3"></span>
-        <span className="bubble bubble-4"></span>
-        <span className="bubble bubble-5"></span>
-        <span className="bubble bubble-6"></span>
-        <span className="bubble bubble-7"></span>
-
-
-        {/* =====================================
-            BUNGA 2
-        ====================================== */}
-
-        <img
-          src={bunga2}
-          alt=""
-          className="decor bunga2 bunga2-a"
-        />
-
-        <img
-          src={bunga2}
-          alt=""
-          className="decor bunga2 bunga2-b"
-        />
-
-        <img
-          src={bunga2}
-          alt=""
-          className="decor bunga2 bunga2-c"
-        />
-
-        <img
-          src={bunga2}
-          alt=""
-          className="decor bunga2 bunga2-d"
-        />
-
-
-        {/* =====================================
-            HERO CENTER
-        ====================================== */}
-
-        <div className="hero-center">
-
-          {/* HERO NAME FRAME */}
-
-          <img
-            src={HeroName}
-            alt=""
-            className="hero-name-frame"
-          />
-
-
-          {/* HERO TEXT */}
-
-          <div className="hero-copy">
-
-            <h1>
-              <span>
-                Hello
-              </span>
-
-              <span>
-                I'm Annisa Aulia R
-              </span>
+      <main>
+        <section className="hero" id="home">
+          <div className="hero-text">
+            <p className="eyebrow">Hello, welcome to my portfolio</p>
+            <h1 className="display">
+              <Typing text="I'm Annisa" speed={70} delay={200} />
+              <br />
+              <Typing text="Aulia Rahmah" speed={70} delay={1000} />
             </h1>
-
-
-            <div className="student-row">
-
-              <span className="line"></span>
-
-              <p>
-                Computer Science Student @BinusUniversity
-              </p>
-
-              <span className="line"></span>
-
+            <p className="role">
+              <Typing text="Computer Science Student @ BINUS University" speed={28} delay={1900} />
+            </p>
+            <p className="lead">
+              <Typing text="UI/UX design & front-end development — turning ideas into intuitive designs and functional digital experiences." speed={14} delay={3300} />
+            </p>
+            <div className="btn-row">
+              <a className="btn btn-primary" href="#skills">View Projects</a>
+              <a className="btn btn-ghost" href="#contact">Contact Me</a>
             </div>
-
           </div>
 
+          <div className="hero-art" aria-hidden="true">
+            <img className="art-main" src={IMG.bunga1} alt="" />
+            <img className="art-sm" src={IMG.bunga3} alt="" />
+            <img className="art-butterfly" src={IMG.kupu4} alt="" />
+          </div>
+        </section>
 
-          {/* =====================================
-              LEFT DECORATION
-          ====================================== */}
-
-          <img
-            src={bunga1}
-            alt=""
-            className="decor bunga1 bunga1-left"
-          />
-
-          <img
-            src={bunga3}
-            alt=""
-            className="decor bunga3 bunga3-left"
-          />
-
-          <img
-            src={kupu4}
-            alt=""
-            className="decor kupu kupu-left"
-          />
-
-
-          {/* =====================================
-              RIGHT DECORATION
-          ====================================== */}
-
-          <img
-            src={bunga1}
-            alt=""
-            className="decor bunga1 bunga1-right"
-          />
-
-          <img
-            src={bunga5}
-            alt=""
-            className="decor bunga5 bunga5-right"
-          />
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================
-          ABOUT
-      ====================================== */}
-
-      <About
-        bunga1={bunga1}
-        bunga5={bunga5}
-        kupu4={kupu4}
-      />
-
-
-      {/* =====================================
-          SKILL & PROJECTS
-      ====================================== */}
-
-      <div id="skills">
+        <About photo={IMG.photo} flower={IMG.bunga5} />
         <SkillProjects />
-      </div>
+        <Experience />
+        <Contact />
+      </main>
 
-
-      {/* =====================================
-          EXPERIENCE
-      ====================================== */}
-
-      <Experience />
-
-
-      {/* =====================================
-          CONTACT / THANK YOU
-      ====================================== */}
-
-      <Contact />
-
+      <footer className="footer">© 2026 Annisa Aulia Rahmah</footer>
     </>
   );
 }
-
-
-export default App;

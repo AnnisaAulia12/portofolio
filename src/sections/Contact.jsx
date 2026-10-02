@@ -1,285 +1,52 @@
-import React, { useEffect, useRef, useState } from "react";
-import "../style/contact.css";
+import Decor from "../components/Decor.jsx";
+import Typing from "../components/Typing.jsx";
+import React, { useState } from "react";
 
-const portfolioPdf = new URL(
-  "../assets/files/AnnisaPorto.pdf",
-  import.meta.url
-).href;
+const portfolioPdf = new URL("../assets/files/AnnisaPorto.pdf", import.meta.url).href;
+const cvPdf = new URL("../assets/files/AnnisaCV.pdf", import.meta.url).href;
+const EMAIL = "nisaauliarmh@gmail.com";
 
-const cvPdf = new URL(
-  "../assets/files/AnnisaCV.pdf",
-  import.meta.url
-).href;
-
-function Contact() {
-  const [phase, setPhase] = useState("closed");
-  const [inView, setInView] = useState(false);
-
-  const sectionRef = useRef(null);
-
-  const openTimerRef = useRef(null);
-  const closeTimerRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (
-          entry.isIntersecting &&
-          entry.intersectionRatio >= 0.15
-        ) {
-          setInView(true);
-        } else if (!entry.isIntersecting) {
-          setInView(false);
-        }
-      },
-      {
-        threshold: [0, 0.15],
-      }
-    );
-
-    observer.observe(section);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      clearTimeout(openTimerRef.current);
-      clearTimeout(closeTimerRef.current);
-    };
-  }, []);
-
-  const handleOpen = () => {
-    if (phase !== "closed") return;
-
-    setPhase("opening");
-
-    clearTimeout(openTimerRef.current);
-
-    openTimerRef.current = setTimeout(() => {
-      setPhase("open");
-    }, 1500);
-  };
-
-  const handleClose = () => {
-    if (phase !== "open") return;
-
-    setPhase("closing");
-
-    clearTimeout(closeTimerRef.current);
-
-    closeTimerRef.current = setTimeout(() => {
-      setPhase("closed");
-    }, 1600);
-  };
-
-  const handleCopyEmail = async () => {
-    const email = "nisaauliarmh@gmail.com";
-
-    try {
-      await navigator.clipboard.writeText(email);
-    } catch {
-      window.prompt("Copy email:", email);
-    }
+export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(EMAIL); }
+    catch { window.prompt("Copy email:", EMAIL); return; }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className={`contact-section ${
-        inView ? "is-inview" : ""
-      }`}
-      id="contact"
-    >
-      {}
+    <section className="section" id="contact">
+      <Decor set="contact" />
+      <div className="container reveal">
+        <div className="card contact-card">
+          <h2 className="display h2 center"><Typing text="Let's Connect" speed={75} /></h2>
+          <p className="center muted">Thank you for visiting — feel free to reach out!</p>
 
-      <span
-        className="contact-decor contact-flower-1"
-        aria-hidden="true"
-      ></span>
-
-      <span
-        className="contact-decor contact-flower-2"
-        aria-hidden="true"
-      ></span>
-
-      <span
-        className="contact-bubble contact-bubble-1"
-        aria-hidden="true"
-      ></span>
-
-      <span
-        className="contact-bubble contact-bubble-2"
-        aria-hidden="true"
-      ></span>
-
-      {}
-
-      <div className={`envelope-scene ${phase}`}>
-        <div className="envelope">
-          {/* ENVELOPE BACK */}
-
-          <div
-            className="envelope-back"
-            aria-hidden="true"
-          ></div>
-
-          <div className="contact-letter">
-            <h2 className="contact-title">
-              Contact
-            </h2>
-
-            {/* EMAIL */}
-
-            <div className="contact-email-row">
-              <a
-                href="mailto:nisaauliarmh@gmail.com"
-                className="contact-email"
-              >
-                nisaauliarmh@gmail.com
-              </a>
-
-              <button
-                type="button"
-                className="contact-small-button"
-                onClick={handleCopyEmail}
-              >
-                Copy
-              </button>
-            </div>
-
-            {/* SOCIAL */}
-
-            <div className="contact-action-row">
-              <a
-                href="https://github.com/AnnisaAulia12"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-small-button"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/YOUR-USERNAME"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-small-button"
-              >
-                LinkedIn
-              </a>
-            </div>
-
-            {/* DIVIDER */}
-
-            <div className="contact-divider">
-              • • •
-            </div>
-
-            {/* PORTFOLIO & CV */}
-
-            <div className="contact-document-row">
-
-              <div className="contact-document-group">
-                <a
-                  href={portfolioPdf}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="contact-view-button"
-                >
-                  View Portfolio
-                </a>
-
-                <a
-                  href={portfolioPdf}
-                  download="Annisa-Portofolio.pdf"
-                  className="contact-download-button"
-                  aria-label="Download Portfolio"
-                  title="Download Portfolio"
-                >
-                  ↓
-                </a>
-              </div>
-
-              <div className="contact-document-group">
-                <a
-                  href={cvPdf}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="contact-view-button"
-                >
-                  View CV
-                </a>
-
-                <a
-                  href={cvPdf}
-                  download="Annisa-Aulia-Rahmah-CV.pdf"
-                  className="contact-download-button"
-                  aria-label="Download CV"
-                  title="Download CV"
-                >
-                  ↓
-                </a>
-              </div>
-
-            </div>
-
-            {/* CLOSE BUTTON */}
-
-            <button
-              type="button"
-              className="contact-close-button"
-              onClick={handleClose}
-              disabled={phase !== "open"}
-            >
-              Close
-            </button>
+          <div className="contact-email">
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+            <button className="btn btn-ghost sm" onClick={copy}>{copied ? "Copied ✓" : "Copy"}</button>
           </div>
 
-          <div
-            className="envelope-top-flap"
-            aria-hidden="true"
-          ></div>
+          <div className="btn-row center-row">
+            <a className="btn btn-ghost" href="https://github.com/AnnisaAulia12" target="_blank" rel="noreferrer">GitHub</a>
+            <a className="btn btn-ghost" href="https://www.linkedin.com/in/annisa-aulia-rahmah-3308582b7/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
 
-          <div
-            className="envelope-left-fold"
-            aria-hidden="true"
-          ></div>
+          <hr />
 
-          <div
-            className="envelope-right-fold"
-            aria-hidden="true"
-          ></div>
-
-          <div
-            className="envelope-bottom-fold"
-            aria-hidden="true"
-          ></div>
-
-          {phase === "closed" && (
-            <button
-              type="button"
-              className="envelope-open-button"
-              onClick={handleOpen}
-            >
-              Open
-            </button>
-          )}
+          <div className="doc-grid">
+            {[["Portfolio", portfolioPdf, "Annisa-Portofolio.pdf"], ["CV", cvPdf, "Annisa-Aulia-Rahmah-CV.pdf"]].map(
+              ([label, href, file]) => (
+                <div className="doc" key={label}>
+                  <a className="btn btn-primary" href={href} target="_blank" rel="noreferrer">View {label}</a>
+                  <a className="btn btn-ghost sm" href={href} download={file} aria-label={`Download ${label}`}>↓</a>
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
-
-      <div
-        className="contact-bottom-bar"
-        aria-hidden="true"
-      ></div>
     </section>
   );
 }
-
-export default Contact;
