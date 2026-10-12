@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const portfolioPdf = new URL("../assets/files/AnnisaPorto.pdf", import.meta.url).href;
 const cvPdf = new URL("../assets/files/AnnisaCV.pdf", import.meta.url).href;
-const EMAIL = "nisaauliarmh@gmail.com";
+const EMAIL = "niisaauliarmh@gmail.com";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
