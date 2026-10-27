@@ -27,6 +27,16 @@ const IMG = {
     "../assets/images/project-shop.png",
     import.meta.url
   ).href,
+
+  loomi: new URL(
+    "../assets/images/project_Loomi.png",
+    import.meta.url
+  ).href,
+
+  recepi: new URL(
+    "../assets/images/project_recepi.png",
+    import.meta.url
+  ).href,
 };
 
 const SKILL_LOGOS = {
@@ -137,6 +147,9 @@ const PROJECTS = [
 
     github:
       "https://github.com/AnnisaAulia12/PomodoroTimer.git",
+
+    website:
+      "https://pomodoro-quest.vercel.app/",
   },
 
   {
@@ -162,8 +175,31 @@ const PROJECTS = [
     github:
       "https://github.com/silmiz/HonkaiStarRetail.git",
   },
-];
 
+  {
+    title: "Loomi Photobooth",
+
+    image: IMG.loomi,
+
+    description:
+      "A collaborative online photobooth where users can create and customize photos with frames, stickers, text overlays, and visual effects while collaborating in real time.",
+
+    github:
+      "https://github.com/AnnisaAulia12/LOOMI---Collaborative-Real-Time-Online-Photobooth",
+
+    website:
+      "https://loomi-web-photobooth-jjje.vercel.app/",
+  },
+
+  {
+    title: "Recepi",
+
+    image: IMG.recepi,
+
+    description:
+      "A mobile app that recommends recipes based on weather conditions and available ingredients, helping users discover suitable meals and ingredient alternatives.",
+  },
+];
 
 const hasLink = (u) => u && !u.includes("YOUR-USERNAME");
 
@@ -173,16 +209,26 @@ export default function SkillProjects() {
   return (
     <section className="section" id="skills">
       <Decor set="skills" />
+
       <div className="container reveal">
-        <h2 className="display h2 center"><Typing text="Skill & Projects" speed={75} /></h2>
+        <h2 className="display h2 center">
+          <Typing text="Skill & Projects" speed={75} />
+        </h2>
 
         <div className="tabs" role="tablist">
-          {[["skill", "Skill"], ["projects", "Projects"]].map(([id, label]) => (
-            <button key={id} role="tab" aria-selected={tab === id}
-              className={`tab ${tab === id ? "active" : ""}`} onClick={() => setTab(id)}>
-              {label}
-            </button>
-          ))}
+          {[["skill", "Skill"], ["projects", "Projects"]].map(
+            ([id, label]) => (
+              <button
+                key={id}
+                role="tab"
+                aria-selected={tab === id}
+                className={`tab ${tab === id ? "active" : ""}`}
+                onClick={() => setTab(id)}
+              >
+                {label}
+              </button>
+            )
+          )}
         </div>
 
         {tab === "skill" && (
@@ -190,14 +236,22 @@ export default function SkillProjects() {
             {SKILLS.map((g) => (
               <div className="card skill-card" key={g.id}>
                 <h3 className="chip">{g.title}</h3>
+
                 <ul className="skill-list">
                   {g.rows.flat().map((item) => (
                     <li key={item}>
                       {SKILL_LOGOS[item]?.src ? (
-                        <img src={SKILL_LOGOS[item].src} alt="" loading="lazy" />
+                        <img
+                          src={SKILL_LOGOS[item].src}
+                          alt=""
+                          loading="lazy"
+                        />
                       ) : (
-                        <span className="logo-fb">{SKILL_LOGOS[item]?.fallback || item.slice(0, 2)}</span>
+                        <span className="logo-fb">
+                          {SKILL_LOGOS[item]?.fallback || item.slice(0, 2)}
+                        </span>
                       )}
+
                       <span>{item}</span>
                     </li>
                   ))}
@@ -211,12 +265,40 @@ export default function SkillProjects() {
           <div className="project-grid">
             {PROJECTS.map((p) => (
               <article className="card project" key={p.title}>
-                <div className="thumb"><img src={p.image} alt={p.title} loading="lazy" /></div>
+                <div className="thumb">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading="lazy"
+                  />
+                </div>
+
                 <h3>{p.title}</h3>
+
                 <p>{p.description}</p>
+
                 {hasLink(p.github) && (
-                  <a className="btn btn-ghost sm" href={p.github} target="_blank" rel="noreferrer"
-                    aria-label={`View ${p.title} on GitHub`}>GitHub ↗</a>
+                  <a
+                    className="btn btn-ghost sm"
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View ${p.title} on GitHub`}
+                  >
+                    GitHub ↗
+                  </a>
+                )}
+
+                {p.website && (
+                  <a
+                    className="btn btn-ghost sm"
+                    href={p.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Visit ${p.title} website`}
+                  >
+                    Live Demo ↗
+                  </a>
                 )}
               </article>
             ))}
