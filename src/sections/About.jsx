@@ -1,31 +1,25 @@
-import Typing from "../components/Typing.jsx";
 import React from "react";
+import Section from "./Section.jsx";
+import Girl from "../world/Girl.jsx";
+import { PROFILE } from "../data/profile.js";
 
-export default function About({ photo, flower }) {
+export default function About() {
   return (
-    <section className="section" id="about">
-      <div className="container about reveal">
-        <div className="about-photo">
-          <img src={flower} alt="" className="about-flower" aria-hidden="true" />
-          <img src={photo} alt="Annisa" />
-        </div>
-        <div className="card about-card">
-          <h2 className="display h2"><Typing text="About Me" speed={75} /></h2>
-          <p className="about-intro">
-            Hi! I'm Annisa Aulia Rahmah, a Computer Science student at BINUS University.
-          </p>
-          <p>
-            On the design side, I map user flows, design interfaces, and craft the components a product needs. 
-            On the engineering side, I turn those designs into clean, functional code. 
-            In my university and group projects I take part in both, so the final result stays true to the original idea.
-          </p>
-          <p>
-            I'm drawn to product development, where design thinking and technical skills meet. 
-            I'm continuously learning through real-world projects to build products that are well-structured, 
-            intuitive, and enjoyable to use.
-          </p>
-        </div>
+    <Section id="about" title="About Me" hint="the person behind the pixels">
+      <div className="about">
+        <article className="paper clip story">
+          {PROFILE.about.map((p) => <p key={p}>{p}</p>)}
+        </article>
+        <aside className="paper clip clip-y player">
+          <div className="avatar"><Girl scale={9} crop="head" /></div>
+          <dl>
+            <div><dt>PLAYER</dt><dd>{PROFILE.name}</dd></div>
+            <div><dt>CLASS</dt><dd>{PROFILE.role}</dd></div>
+            <div><dt>GUILD</dt><dd>{PROFILE.school}</dd></div>
+            <div><dt>MAIN QUEST</dt><dd>{PROFILE.focus}</dd></div>
+          </dl>
+        </aside>
       </div>
-    </section>
+    </Section>
   );
 }

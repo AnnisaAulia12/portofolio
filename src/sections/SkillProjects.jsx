@@ -1,42 +1,15 @@
-import Decor from "../components/Decor.jsx";
-import Typing from "../components/Typing.jsx";
+
 import React, { useState } from "react";
 
 const IMG = {
-  reading: new URL(
-    "../assets/images/project-reading.png",
-    import.meta.url
-  ).href,
-
-  housing: new URL(
-    "../assets/images/project-housing.png",
-    import.meta.url
-  ).href,
-
-  pomodoro: new URL(
-    "../assets/images/project-pomodoro.png",
-    import.meta.url
-  ).href,
-
-  eltrack: new URL(
-    "../assets/images/project-eltrack.png",
-    import.meta.url
-  ).href,
-
-  shop: new URL(
-    "../assets/images/project-shop.png",
-    import.meta.url
-  ).href,
-
-  loomi: new URL(
-    "../assets/images/project_Loomi.png",
-    import.meta.url
-  ).href,
-
-  recepi: new URL(
-    "../assets/images/project_recepi.png",
-    import.meta.url
-  ).href,
+  reading: new URL("../assets/images/project-reading.png", import.meta.url).href,
+  housing: new URL("../assets/images/project-housing.png", import.meta.url).href,
+  pomodoro: new URL("../assets/images/project-pomodoro.png", import.meta.url).href,
+  eltrack: new URL("../assets/images/project-eltrack.png", import.meta.url).href,
+  shop: new URL("../assets/images/project-shop.png", import.meta.url).href,
+  loomi: new URL("../assets/images/project_Loomi.png", import.meta.url).href,
+  recepi: new URL("../assets/images/project_recepi.png", import.meta.url).href,
+  taskTracker: new URL("../assets/images/project_TaskTracker.png", import.meta.url).href,
 };
 
 const SKILL_LOGOS = {
@@ -73,7 +46,6 @@ const SKILLS = [
       ["Dart", "Java", "Python"],
     ],
   },
-
   {
     id: "database",
     title: "Database",
@@ -81,7 +53,6 @@ const SKILLS = [
       ["MySQL", "Supabase"],
     ],
   },
-
   {
     id: "tools",
     title: "Tools & Editing",
@@ -92,7 +63,6 @@ const SKILLS = [
       ["Canva", "Figma", "IbisPaint"],
     ],
   },
-
   {
     id: "frontend",
     title: "Frontend",
@@ -101,7 +71,6 @@ const SKILLS = [
       ["Flutter"],
     ],
   },
-
   {
     id: "backend",
     title: "Backend",
@@ -115,120 +84,89 @@ const SKILLS = [
 const PROJECTS = [
   {
     title: "Nalleta",
-
     image: IMG.reading,
-
     description:
       "An all-in-one reading app to track books, save notes and quotes, and stay focused while reading.",
-
-    github:
-      "https://github.com/Shal1964/ReadingLog.git",
+    github: "https://github.com/Shal1964/ReadingLog.git",
   },
-
   {
     title: "Housing Platform",
-
     image: IMG.housing,
-
     description:
       "A housing platform that helps users find, compare, and save rental properties based on their preferences.",
-
-    github:
-      "https://github.com/YOUR-USERNAME/Housing-Platform",
+    github: "https://github.com/YOUR-USERNAME/Housing-Platform",
   },
-
   {
     title: "Focus Timer",
-
     image: IMG.pomodoro,
-
     description:
       "A gamified focus timer with themes, EXP rewards, music, and a to-do list to make studying more engaging.",
-
-    github:
-      "https://github.com/AnnisaAulia12/PomodoroTimer.git",
-
-    website:
-      "https://pomodoro-quest.vercel.app/",
+    github: "https://github.com/AnnisaAulia12/PomodoroTimer.git",
+    website: "https://pomodoro-quest.vercel.app/",
   },
-
   {
-    title: "eltrack",
-
+    title: "Eltrack",
     image: IMG.eltrack,
-
     description:
       "A waste management app that helps users understand waste categories and manage disposal more easily.",
-
-    github:
-      "https://github.com/AnnisaAulia12/Eltrack.git",
+    github: "https://github.com/AnnisaAulia12/Eltrack.git",
   },
-
   {
     title: "Shopping App",
-
     image: IMG.shop,
-
     description:
       "A simple shopping app for managing products, with Google authentication and light/dark mode.",
-
-    github:
-      "https://github.com/silmiz/HonkaiStarRetail.git",
+    github: "https://github.com/silmiz/HonkaiStarRetail.git",
   },
-
   {
     title: "Loomi Photobooth",
-
     image: IMG.loomi,
-
     description:
       "A collaborative online photobooth where users can create and customize photos with frames, stickers, text overlays, and visual effects while collaborating in real time.",
-
-    github:
-      "https://github.com/AnnisaAulia12/LOOMI---Collaborative-Real-Time-Online-Photobooth",
-
-    website:
-      "https://loomi-web-photobooth-jjje.vercel.app/",
+    github: "https://github.com/AnnisaAulia12/LOOMI---Collaborative-Real-Time-Online-Photobooth",
+    website: "https://loomi-web-photobooth-jjje.vercel.app/",
   },
-
   {
     title: "Recepi",
-
     image: IMG.recepi,
-
     description:
       "A mobile app that recommends recipes based on weather conditions and available ingredients, helping users discover suitable meals and ingredient alternatives.",
   },
+  {
+    title: "Task Tracker",
+    image: IMG.taskTracker,
+    description:
+      "A full-stack task management application built to help users organize daily activities, manage deadlines, and track task progress efficiently. Features user authentication, personalized task management, status categorization, and calendar-based task organization. Developed using React, Python FastAPI, and PostgreSQL.",
+    github: "",
+  },
 ];
 
-const hasLink = (u) => u && !u.includes("YOUR-USERNAME");
+const hasLink = (url) =>
+  url && !url.includes("YOUR-USERNAME");
 
 export default function SkillProjects() {
   const [tab, setTab] = useState("skill");
 
   return (
     <section className="section" id="skills">
-      <Decor set="skills" />
-
       <div className="container reveal">
-        <h2 className="display h2 center">
-          <Typing text="Skill & Projects" speed={75} />
-        </h2>
+        <h2 className="h2">Skill &amp; Projects</h2>
 
         <div className="tabs" role="tablist">
-          {[["skill", "Skill"], ["projects", "Projects"]].map(
-            ([id, label]) => (
-              <button
-                key={id}
-                role="tab"
-                aria-selected={tab === id}
-                className={`tab ${tab === id ? "active" : ""}`}
-                onClick={() => setTab(id)}
-              >
-                {label}
-              </button>
-            )
-          )}
+          {[
+            ["skill", "Skill"],
+            ["projects", "Projects"],
+          ].map(([id, label]) => (
+            <button
+              key={id}
+              role="tab"
+              aria-selected={tab === id}
+              className={`tab ${tab === id ? "active" : ""}`}
+              onClick={() => setTab(id)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
         {tab === "skill" && (
@@ -277,29 +215,31 @@ export default function SkillProjects() {
 
                 <p>{p.description}</p>
 
-                {hasLink(p.github) && (
-                  <a
-                    className="btn btn-ghost sm"
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`View ${p.title} on GitHub`}
-                  >
-                    GitHub ↗
-                  </a>
-                )}
+                <div className="project-links">
+                  {hasLink(p.github) && (
+                    <a
+                      className="btn btn-ghost sm"
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`View ${p.title} on GitHub`}
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
 
-                {p.website && (
-                  <a
-                    className="btn btn-ghost sm"
-                    href={p.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Visit ${p.title} website`}
-                  >
-                    Live Demo ↗
-                  </a>
-                )}
+                  {p.website && (
+                    <a
+                      className="btn btn-ghost sm"
+                      href={p.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Visit ${p.title} website`}
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                </div>
               </article>
             ))}
           </div>
