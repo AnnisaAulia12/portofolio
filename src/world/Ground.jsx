@@ -33,12 +33,13 @@ export default function Ground({ active }) {
     return () => clearTimeout(t);
   }, [active]);
 
+  // bunga sedikit saja, diletakkan di sela-sela papan petunjuk supaya tidak ramai
   const flowers = useMemo(
-    () => Array.from({ length: 24 }, (_, i) => ({
-      x: ((i + 0.5) / 24) * 100 + ((i * 37) % 7) - 3,
-      size: 3 + ((i * 5) % 3),
-      tint: TINTS[(i * 3) % TINTS.length],
-      delay: -((i * 0.55) % 3),
+    () => [19, 37, 55, 73, 92].map((x, i) => ({
+      x,
+      size: 3 + (i % 2),
+      tint: TINTS[(i * 2) % TINTS.length],
+      delay: -(i * 0.7),
     })),
     []
   );
@@ -51,7 +52,7 @@ export default function Ground({ active }) {
       <div className="flowers" aria-hidden="true">
         {flowers.map((f, i) => (
           <PixelIcon key={i} rows={SPRITES.flower} size={f.size} tint={f.tint} className="gflower"
-            style={{ left: `${f.x}%`, "--d": `${f.delay}s`, "--grow": `${(i % 8) * 0.07}s` }} />
+            style={{ left: `${f.x}%`, "--d": `${f.delay}s`, "--grow": `${i * 0.1}s` }} />
         ))}
       </div>
 

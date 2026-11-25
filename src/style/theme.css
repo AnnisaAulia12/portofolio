@@ -178,13 +178,31 @@ button.shot:hover img{transform:scale(1.06)}
 .polaroid p{flex:1;font-size:16px;line-height:1.4}
 .polaroid .links{display:flex;flex-wrap:wrap;gap:8px;min-height:40px;align-items:flex-end}
 
-/* lightbox */
+/* project detail modal */
 .lightbox{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;background:rgba(20,33,77,.78);animation:fade .2s steps(3) both}
-.lb-card{position:relative;max-width:min(920px,100%);max-height:100%;padding:16px 16px 12px;background:var(--paper);box-shadow:var(--px),9px 9px 0 3px rgba(0,0,0,.3);display:flex;flex-direction:column;gap:10px}
-.lb-card img{max-width:100%;max-height:calc(100vh - 150px);object-fit:contain;margin:0 auto;background:var(--sky)}
-.lb-card figcaption{font:400 12px/1.5 var(--title);text-align:center}
-.lb-close{position:absolute;right:-14px;top:-14px;width:36px;height:36px;background:var(--pink);color:#fff;font:600 24px/1 var(--body);box-shadow:var(--px2)}
+.pd-card{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);width:min(1240px,100%);height:min(760px,calc(100vh - 40px));overflow:hidden;background:var(--paper);box-shadow:var(--px),9px 9px 0 3px rgba(0,0,0,.3);animation:pop .25s steps(4) both}
+.pd-media{display:flex;flex-direction:column;gap:14px;justify-content:center;padding:32px;background:var(--sky);background-image:linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px);background-size:20px 20px;overflow:auto}
+.pd-shot{background:#fff;box-shadow:var(--px2)}
+.pd-shot img{display:block;width:100%;max-height:calc(min(760px,100vh - 40px) - 140px);object-fit:contain}
+.pd-media .thumbs{justify-content:center;flex-wrap:wrap}
+.pd-info{display:flex;flex-direction:column;gap:20px;padding:44px 40px 36px;overflow:auto}
+.pd-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;padding-right:20px}
+.pd-head h3{font:400 24px/1.4 var(--title)}
+.pd-badge{padding:4px 14px;background:var(--mint);box-shadow:var(--px2);font-size:17px;font-weight:600}
+.pd-desc{font-size:21px;line-height:1.55}
+.pd-label{font:400 13px/1.6 var(--title);letter-spacing:.05em;text-transform:uppercase;opacity:.7;margin-bottom:-6px}
+.pd-tech{display:flex;flex-wrap:wrap;gap:12px}
+.pd-tech li{margin:3px;padding:7px 18px;background:var(--lavender);box-shadow:var(--px2);font-size:19px;font-weight:600}
+.pd-tech li:nth-child(3n+2){background:var(--mint)}
+.pd-tech li:nth-child(3n){background:var(--yellow)}
+.pd-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.lb-close{position:absolute;right:10px;top:10px;z-index:5;width:36px;height:36px;background:var(--pink);color:#fff;font:600 24px/1 var(--body);box-shadow:var(--px2)}
 .lb-close:hover{background:var(--yellow);color:var(--ink)}
+@media (max-width:760px){
+  .pd-card{grid-template-columns:1fr;overflow:auto;height:auto;max-height:calc(100vh - 40px)}
+  .pd-media{overflow:visible;padding:18px}
+  .pd-info{overflow:visible;padding:22px 20px}
+}
 
 /* ===== experience: jalur setapak ===== */
 .trail{position:relative;display:grid;gap:40px;padding-left:64px;max-width:860px}

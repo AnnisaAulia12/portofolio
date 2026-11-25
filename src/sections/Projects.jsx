@@ -1,9 +1,9 @@
-
 import React, { useState } from "react";
 import Section from "./Section.jsx";
 import PixelIcon from "../world/pixels.jsx";
 import { SPRITES } from "../world/sprites.js";
 import { PROJECTS } from "../data/project.js";
+import Lightbox from "../components/Lightbox.jsx";
 
 const CLIPS = ["", "clip-y", "clip-m", "clip-l"];
 
@@ -35,7 +35,7 @@ function ProjectCard({ p, i, onZoom }) {
         <button
           type="button"
           className="shot"
-          onClick={() => onZoom?.(cur, p.title)}
+          onClick={() => onZoom?.(p, idx)}
           aria-label={`Enlarge ${p.title} image`}
         >
           <img
@@ -113,12 +113,14 @@ function ProjectCard({ p, i, onZoom }) {
   );
 }
 
-export default function Projects({ onZoom }) {
+export default function Projects() {
+  const [zoom, setZoom] = useState(null);
+
   return (
     <Section
       id="projects"
       title="My Works"
-      hint="click an image to enlarge it"
+      hint="click a project to see its details"
     >
       <div className="gallery">
         {PROJECTS.map((p, i) => (
@@ -126,10 +128,18 @@ export default function Projects({ onZoom }) {
             key={p.title}
             p={p}
             i={i}
-            onZoom={onZoom}
+            onZoom={(project, idx) => setZoom({ project, idx })}
           />
         ))}
       </div>
+
+      {zoom?.project && (
+        <Lightbox
+          project={zoom.project}
+          startIdx={zoom.idx}
+          onClose={() => setZoom(null)}
+        />
+      )}
     </Section>
   );
 }

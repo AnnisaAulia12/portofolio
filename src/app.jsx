@@ -68,13 +68,13 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
-        <Projects onZoom={(src, title) => setZoom({ src, title })} />
+        <Projects onZoom={(project, idx) => setZoom({ project, idx })} />
         <Experience />
         <Contact />
       </main>
 
       <Ground active={active} />
-      {zoom && <Lightbox src={zoom.src} title={zoom.title} onClose={closeZoom} />}
+      {zoom && <Lightbox project={zoom.project} startIdx={zoom.idx} onClose={closeZoom} />}
     </>
   );
 }

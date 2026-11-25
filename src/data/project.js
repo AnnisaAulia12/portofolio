@@ -12,6 +12,7 @@ const IMG = {
 export const PROJECTS = [
   {
     title: "Nalleta",
+    tech: ["Flutter", "Dart", "Supabase"],
     description:
       "An all-in-one reading app to track books, save notes and quotes, and stay focused while reading.",
     image: IMG.reading,
@@ -19,6 +20,7 @@ export const PROJECTS = [
   },
   {
     title: "Housing Platform",
+    tech: ["React", "Node.js", "MySQL"],
     description:
       "A housing platform that helps users find, compare, and save rental properties based on their preferences.",
     image: IMG.housing,
@@ -26,6 +28,7 @@ export const PROJECTS = [
   },
   {
     title: "Focus Timer",
+    tech: ["React", "JavaScript", "CSS", "Vercel"],
     description:
       "A gamified focus timer with themes, EXP rewards, music, and a to-do list to make studying more engaging.",
     image: IMG.pomodoro,
@@ -34,6 +37,7 @@ export const PROJECTS = [
   },
   {
     title: "Eltrack",
+    tech: ["Flutter", "Dart", "Supabase"],
     description:
       "A waste management app that helps users understand waste categories and manage disposal more easily.",
     image: IMG.eltrack,
@@ -41,6 +45,7 @@ export const PROJECTS = [
   },
   {
     title: "Shopping App",
+    tech: ["Flutter", "Dart", "Google Auth"],
     description:
       "A simple shopping app for managing products, with Google authentication and light/dark mode.",
     image: IMG.shop,
@@ -48,6 +53,7 @@ export const PROJECTS = [
   },
   {
     title: "Loomi Photobooth",
+    tech: ["React", "Node.js", "WebSocket", "Vercel"],
     description:
       "A collaborative online photobooth where users can create and customize photos with frames, stickers, text overlays, and visual effects while collaborating in real time.",
     image: IMG.loomi,
@@ -57,12 +63,14 @@ export const PROJECTS = [
   },
   {
     title: "Recepi",
+    tech: ["Flutter", "Dart", "Figma"],
     description:
       "A mobile app that recommends recipes based on weather conditions and available ingredients, helping users discover suitable meals and ingredient alternatives.",
     image: IMG.recepi,
   },
   {
     title: "Task Tracker",
+    tech: ["React", "Python", "FastAPI", "PostgreSQL"],
     description:
       "A full-stack task management application built to help users organize daily activities, manage deadlines, and track task progress efficiently. Features user authentication, personalized task management, status categorization, and calendar-based task organization. Developed using React, Python FastAPI, and PostgreSQL.",
     image: IMG.taskTracker,
