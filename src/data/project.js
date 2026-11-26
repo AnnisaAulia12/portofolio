@@ -36,22 +36,6 @@ export const PROJECTS = [
     website: "https://pomodoro-quest.vercel.app/",
   },
   {
-    title: "Eltrack",
-    tech: ["Flutter", "Dart", "Supabase"],
-    description:
-      "A waste management app that helps users understand waste categories and manage disposal more easily.",
-    image: IMG.eltrack,
-    github: "https://github.com/AnnisaAulia12/Eltrack.git",
-  },
-  {
-    title: "Shopping App",
-    tech: ["Flutter", "Dart", "Google Auth"],
-    description:
-      "A simple shopping app for managing products, with Google authentication and light/dark mode.",
-    image: IMG.shop,
-    github: "https://github.com/silmiz/HonkaiStarRetail.git",
-  },
-  {
     title: "Loomi Photobooth",
     tech: ["React", "Node.js", "Tailwin CSS" ,"livekit", "MediaPipe", "Vercel"],
     description:
@@ -62,18 +46,35 @@ export const PROJECTS = [
     website: "https://loomi-web-photobooth-jjje.vercel.app/",
   },
   {
-    title: "Recepi",
-    tech: ["Flutter", "geolocator/geocoding", "TheMealDB API", "OpenWhetaerMapAPI", "PHP", "MySQL"],
-    description:
-      "A mobile app that recommends recipes based on weather conditions and available ingredients, helping users discover suitable meals and ingredient alternatives.",
-    image: IMG.recepi,
-  },
-  {
     title: "Task Tracker",
     tech: ["React", "Python", "FastAPI", "PostgreSQL", "SQLALchemy"],
     description:
       "A full-stack task management application built to help users organize daily activities, manage deadlines, and track task progress efficiently. Features user authentication, personalized task management, status categorization, and calendar-based task organization. Developed using React, Python FastAPI, and PostgreSQL.",
     image: IMG.taskTracker,
     github: "https://github.com/AnnisaAulia12/TaskTracker.git",
+     website: "https://task-tracker-qsim.vercel.app",
+  },
+  {
+    title: "Eltrack",
+    tech: ["Flutter", "Dart", "Supabase"],
+    description:
+      "A waste management app that helps users understand waste categories and manage disposal more easily.",
+    image: IMG.eltrack,
+    github: "https://github.com/AnnisaAulia12/Eltrack.git",
+  },
+  {
+    title: "Recepi",
+    tech: ["Flutter", "geolocator/geocoding", "TheMealDB API", "OpenWhetaerMapAPI", "PHP", "MySQL"],
+    description:
+      "A mobile app that recommends recipes based on weather conditions and available ingredients, helping users discover suitable meals and ingredient alternatives.",
+    image: IMG.recepi,
+  },
+  {     
+    title: "Shopping App",
+    tech: ["Flutter", "Dart", "Google Auth"],
+    description:
+      "A simple shopping app for managing products, with Google authentication and light/dark mode.",
+    image: IMG.shop,
+    github: "https://github.com/silmiz/HonkaiStarRetail.git",
   },
 ];
