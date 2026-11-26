@@ -12,7 +12,7 @@ const IMG = {
 export const PROJECTS = [
   {
     title: "Nalleta",
-    tech: ["Flutter", "Dart", "Supabase"],
+    tech: ["Flutter", "GooleBookAPI", "Supabase"],
     description:
       "An all-in-one reading app to track books, save notes and quotes, and stay focused while reading.",
     image: IMG.reading,
@@ -53,7 +53,7 @@ export const PROJECTS = [
   },
   {
     title: "Loomi Photobooth",
-    tech: ["React", "Node.js", "WebSocket", "Vercel"],
+    tech: ["React", "Node.js", "Tailwin CSS" ,"livekit", "MediaPipe", "Vercel"],
     description:
       "A collaborative online photobooth where users can create and customize photos with frames, stickers, text overlays, and visual effects while collaborating in real time.",
     image: IMG.loomi,
@@ -63,14 +63,14 @@ export const PROJECTS = [
   },
   {
     title: "Recepi",
-    tech: ["Flutter", "Dart", "Figma"],
+    tech: ["Flutter", "geolocator/geocoding", "TheMealDB API", "OpenWhetaerMapAPI", "PHP", "MySQL"],
     description:
       "A mobile app that recommends recipes based on weather conditions and available ingredients, helping users discover suitable meals and ingredient alternatives.",
     image: IMG.recepi,
   },
   {
     title: "Task Tracker",
-    tech: ["React", "Python", "FastAPI", "PostgreSQL"],
+    tech: ["React", "Python", "FastAPI", "PostgreSQL", "SQLALchemy"],
     description:
       "A full-stack task management application built to help users organize daily activities, manage deadlines, and track task progress efficiently. Features user authentication, personalized task management, status categorization, and calendar-based task organization. Developed using React, Python FastAPI, and PostgreSQL.",
     image: IMG.taskTracker,
