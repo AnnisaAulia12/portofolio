@@ -56,7 +56,7 @@ export const PROJECTS = [
   },
   {
     title: "Eltrack",
-    tech: ["Flutter", "Dart", "Supabase"],
+    tech: ["Flutter", "Dart", "MySQL"],
     description:
       "A waste management app that helps users understand waste categories and manage disposal more easily.",
     image: IMG.eltrack,
